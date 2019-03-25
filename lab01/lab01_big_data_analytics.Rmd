@@ -1,0 +1,194 @@
+---
+title: "Big Data Analystics - Lab 01"
+author: "Julius Kittler (anner218) and Maximilian Pfundstein (maxpf364)"
+date: "`r Sys.Date()`"
+output:
+  pdf_document:
+    number_sections: yes
+    toc: yes
+    toc_depth: 3
+  html_document:
+    df_print: paged
+    number_sections: no
+    toc: yes
+    toc_float: no
+  word_document:
+    toc: yes
+    toc_depth: '3'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(kableExtra)
+```
+
+# SQL-Statements
+
+## Statement 1
+
+```{mysql, eval = FALSE, echo = TRUE}
+SELECT * FROM jbemployee
+```
+
+```{r}
+csv1 = read.csv2("task1.csv", sep = ",")
+kable(csv1)
+```
+
+## Statement 2
+
+```{mysql, eval = FALSE, echo = TRUE}
+SELECT name FROM jbdept ORDER BY name
+```
+
+```{r}
+csv2 = read.csv2("task2.csv", sep = ",")
+kable(csv2)
+```
+
+## Statement 3
+
+```{mysql, eval = FALSE, echo = TRUE}
+SELECT name FROM jbparts WHERE qoh = 0 ORDER BY name
+```
+
+```{r}
+csv3 = read.csv2("task3.csv", sep = ",")
+kable(csv3)
+```
+
+## Statement 4
+
+```{mysql, eval = FALSE, echo = TRUE}
+SELECT name FROM jbemployee WHERE salary >= 9000 AND salary <= 10000
+  ORDER BY name
+```
+
+```{r}
+csv4 = read.csv2("task4.csv", sep = ",")
+kable(csv4)
+```
+
+## Statement 5
+
+```{mysql, eval = FALSE, echo = TRUE}
+SELECT *, (startyear-birthyear) AS "Age When Started" FROM jbemployee
+```
+
+```{r}
+csv5 = read.csv2("task5.csv", sep = ",")
+kable(csv5)
+```
+
+## Statement 6
+
+```{mysql, eval = FALSE, echo = TRUE}
+SELECT * FROM jbemployee WHERE name LIKE "%son"
+```
+
+No entries were found that satisfy this condition.
+
+## Statement 7
+
+```{mysql, eval = FALSE, echo = TRUE}
+SELECT * FROM jbitem WHERE supplier IN
+  (SELECT id from jbsupplier WHERE name = "Fisher-Price")
+```
+
+```{r}
+csv7 = read.csv2("task7.csv", sep = ",")
+kable(csv7)
+```
+
+## Statement 8
+
+```{mysql, eval = FALSE, echo = TRUE}
+SELECT * FROM jbitem INNER JOIN jbsupplier ON jbitem.supplier = jbsupplier.id
+  WHERE jbsupplier.name = "Fisher-Price"
+```
+
+```{r}
+csv8 = read.csv2("task8.csv", sep = ",")
+kable(csv8)
+```
+
+## Statement 9
+
+```{mysql, eval = FALSE, echo = TRUE}
+SELECT * FROM jbcity WHERE jbcity.id IN (SELECT city FROM jbsupplier)
+```
+
+```{r}
+csv9 = read.csv2("task9.csv", sep = ",")
+kable(csv9)
+```
+
+## Statement 10
+
+```{mysql, eval = FALSE, echo = TRUE}
+SELECT name, color FROM jbparts WHERE weight > (SELECT weight FROM jbparts
+                                                  WHERE name = "card reader")
+```
+
+```{r}
+csv10 = read.csv2("task10.csv", sep = ",")
+kable(csv10)
+```
+
+## Statement 11
+
+```{mysql, eval = FALSE, echo = TRUE}
+SELECT parts1.name, parts1.color FROM jbparts AS parts1, jbparts AS parts2
+  WHERE parts2.name = "card reader" AND parts1.weight > parts2.weight
+```
+
+```{r}
+csv11 = read.csv2("task11.csv", sep = ",")
+kable(csv11)
+```
+
+## Statement 12
+
+```{mysql, eval = FALSE, echo = TRUE}
+SELECT AVG(weight) FROM jbparts WHERE color = 'black'
+```
+
+```{r}
+csv12 = read.csv2("task12.csv", sep = ",")
+kable(csv12)
+```
+
+## Statement 13
+
+```{mysql, eval = FALSE, echo = TRUE}
+SELECT jbsupplier.name, SUM(js.quan * jp.weight) AS total_weight FROM jbsupplier
+  LEFT JOIN jbcity jc ON jbsupplier.city = jc.id
+  LEFT JOIN jbsupply js ON jbsupplier.id = js.supplier
+  LEFT JOIN jbparts jp on js.part = jp.id
+  WHERE  jc.state = 'Mass'
+  GROUP BY jbsupplier.id
+```
+
+```{r}
+csv13 = read.csv2("task13.csv", sep = ",")
+kable(csv13)
+```
+
+## Statement 14
+
+```{mysql, eval = FALSE, echo = TRUE}
+CREATE TABLE jbitem_custom (
+    id INT,
+    name VARCHAR(20),
+    dept INT NOT NULL,
+    price INT,
+    qoh INT UNSIGNED,
+    supplier INT,
+    CONSTRAINT pk_item PRIMARY KEY(id),
+    CONSTRAINT dept FOREIGN KEY(dept) REFERENCES jbdept(id),
+    CONSTRAINT supplier FOREIGN KEY(supplier) REFERENCES jbsupplier(id));
+
+INSERT INTO jbitem_custom (id, name, dept, price, qoh, supplier)
+  SELECT ji.id, ji.name, ji.dept, ji.price, ji.qoh, ji.supplier
+  FROM jbitem AS ji WHERE ji.price < (SELECT AVG(jbitem.price) FROM jbitem)
+```

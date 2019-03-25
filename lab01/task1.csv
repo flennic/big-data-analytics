@@ -1,0 +1,26 @@
+id,name,salary,manager,birthyear,startyear
+10,"Ross, Stanley",15908,199,1927,1945
+11,"Ross, Stuart",12067,,1931,1932
+13,"Edwards, Peter",9000,199,1928,1958
+26,"Thompson, Bob",13000,199,1930,1970
+32,"Smythe, Carol",9050,199,1929,1967
+33,"Hayes, Evelyn",10100,199,1931,1963
+35,"Evans, Michael",5000,32,1952,1974
+37,"Raveen, Lemont",11985,26,1950,1974
+55,"James, Mary",12000,199,1920,1969
+98,"Williams, Judy",9000,199,1935,1969
+129,"Thomas, Tom",10000,199,1941,1962
+157,"Jones, Tim",12000,199,1940,1960
+199,"Bullock, J.D.",27000,,1920,1920
+215,"Collins, Joanne",7000,10,1950,1971
+430,"Brunet, Paul C.",17674,129,1938,1959
+843,"Schmidt, Herman",11204,26,1936,1956
+994,"Iwano, Masahiro",15641,129,1944,1970
+1110,"Smith, Paul",6000,33,1952,1973
+1330,"Onstad, Richard",8779,13,1952,1971
+1523,"Zugnoni, Arthur A.",19868,129,1928,1949
+1639,"Choy, Wanda",11160,55,1947,1970
+2398,"Wallace, Maggie J.",7880,26,1940,1959
+4901,"Bailey, Chas M.",8377,32,1956,1975
+5119,"Bono, Sonny",13621,55,1939,1963
+5219,"Schwarz, Jason B.",13374,33,1944,1959
