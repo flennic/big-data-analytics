@@ -1,6 +1,6 @@
 ---
-title: "Big Data Analystics - Lab 01"
-author: "Julius Kittler (anner218) and Maximilian Pfundstein (maxpf364)"
+title: "732A54 - Big Data Analytics - Lab RDB"
+author: "Julius Kittler (julki092) and Maximilian Pfundstein (maxpf364)"
 date: "`r Sys.Date()`"
 output:
   pdf_document:
