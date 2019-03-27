@@ -26,6 +26,8 @@ library(kableExtra)
 
 ## Statement 1
 
+1) List all employees, i.e. all tuples in the jbemployee relation.
+
 ```{mysql, eval = FALSE, echo = TRUE}
 SELECT * FROM jbemployee
 ```
@@ -36,6 +38,8 @@ kable(csv1)
 ```
 
 ## Statement 2
+
+2) List the name of all departments in alphabetical order. Note: by “name” we mean the name attribute for all tuples in the jbdept relation.
 
 ```{mysql, eval = FALSE, echo = TRUE}
 SELECT name FROM jbdept ORDER BY name
@@ -48,6 +52,8 @@ kable(csv2)
 
 ## Statement 3
 
+3) What parts are not in store, i.e. qoh = 0? (qoh = Quantity On Hand)
+
 ```{mysql, eval = FALSE, echo = TRUE}
 SELECT name FROM jbparts WHERE qoh = 0 ORDER BY name
 ```
@@ -58,6 +64,8 @@ kable(csv3)
 ```
 
 ## Statement 4
+
+4) Which employees have a salary between 9000 (included) and 10000 (included)?
 
 ```{mysql, eval = FALSE, echo = TRUE}
 SELECT name FROM jbemployee WHERE salary >= 9000 AND salary <= 10000
@@ -71,6 +79,8 @@ kable(csv4)
 
 ## Statement 5
 
+5) What was the age of each employee when they started working (startyear)?
+
 ```{mysql, eval = FALSE, echo = TRUE}
 SELECT *, (startyear-birthyear) AS "Age When Started" FROM jbemployee
 ```
@@ -82,13 +92,20 @@ kable(csv5)
 
 ## Statement 6
 
+6) Which employees have a last name ending with 'son'?
+
 ```{mysql, eval = FALSE, echo = TRUE}
-SELECT * FROM jbemployee WHERE name LIKE "%son"
+SELECT * FROM jbemployee WHERE SUBSTRING_INDEX(name, ',', 1) LIKE '%son';
 ```
 
-No entries were found that satisfy this condition.
+```{r}
+csv6 = read.csv2("task6.csv", sep = ";")
+kable(csv6)
+```
 
 ## Statement 7
+
+7) Which items (note items, not parts) have been delivered by a supplier called Fisher-Price? Formulate this query using a subquery in the where-clause.
 
 ```{mysql, eval = FALSE, echo = TRUE}
 SELECT * FROM jbitem WHERE supplier IN
@@ -102,6 +119,8 @@ kable(csv7)
 
 ## Statement 8
 
+8) Formulate the same query as above, but without a subquery.
+
 ```{mysql, eval = FALSE, echo = TRUE}
 SELECT * FROM jbitem INNER JOIN jbsupplier ON jbitem.supplier = jbsupplier.id
   WHERE jbsupplier.name = "Fisher-Price"
@@ -114,6 +133,9 @@ kable(csv8)
 
 ## Statement 9
 
+9) Show all cities that have suppliers located in them. Formulate this query using a
+subquery in the where-clause.
+
 ```{mysql, eval = FALSE, echo = TRUE}
 SELECT * FROM jbcity WHERE jbcity.id IN (SELECT city FROM jbsupplier)
 ```
@@ -124,6 +146,10 @@ kable(csv9)
 ```
 
 ## Statement 10
+
+10) What is the name and color of the parts that are heavier than a card reader?
+Formulate this query using a subquery in the where-clause. (The SQL query must
+not contain the weight as a constant.)
 
 ```{mysql, eval = FALSE, echo = TRUE}
 SELECT name, color FROM jbparts WHERE weight > (SELECT weight FROM jbparts
@@ -137,6 +163,9 @@ kable(csv10)
 
 ## Statement 11
 
+11) Formulate the same query as above, but without a subquery. (The query must not
+contain the weight as a constant.)
+
 ```{mysql, eval = FALSE, echo = TRUE}
 SELECT parts1.name, parts1.color FROM jbparts AS parts1, jbparts AS parts2
   WHERE parts2.name = "card reader" AND parts1.weight > parts2.weight
@@ -149,6 +178,8 @@ kable(csv11)
 
 ## Statement 12
 
+12) What is the average weight of black parts?
+
 ```{mysql, eval = FALSE, echo = TRUE}
 SELECT AVG(weight) FROM jbparts WHERE color = 'black'
 ```
@@ -159,6 +190,8 @@ kable(csv12)
 ```
 
 ## Statement 13
+
+13) What is the total weight of all parts that each supplier in Massachusetts (“Mass”) has delivered? Retrieve the name and the total weight for each of these suppliers. Do not forget to take the quantity of delivered parts into account. Note that one row should be returned for each supplier.
 
 ```{mysql, eval = FALSE, echo = TRUE}
 SELECT jbsupplier.name, SUM(js.quan * jp.weight) AS total_weight FROM jbsupplier
@@ -175,6 +208,12 @@ kable(csv13)
 ```
 
 ## Statement 14
+
+14) Create a new relation (a table), with the same attributes as the table items using
+the CREATE TABLE syntax where you define every attribute explicitly (i.e. not
+as a copy of another table). Then fill the table with all items that cost less than the
+average price for items. Remember to define primary and foreign keys in your
+table!
 
 ```{mysql, eval = FALSE, echo = TRUE}
 CREATE TABLE jbitem_custom (
