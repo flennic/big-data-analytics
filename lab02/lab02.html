@@ -13144,20 +13144,33 @@ In a number of exercises you will be asked to calculated temperature averages (d
 
 </div>
 </div>
-</div># Remove UTF-8 BOM
-!vim -c ':set nobomb' -c ':set fileencoding=utf-8' -c ':wq' ../data/temperature-readings.csv
-!vim -c ':set nobomb' -c ':set fileencoding=utf-8' -c ':wq' ../data/precipitation-readings.csv
-!vim -c ':set nobomb' -c ':set fileencoding=utf-8' -c ':wq' ../data/stations-Ostergotland.csv
-!vim -c ':set nobomb' -c ':set fileencoding=utf-8' -c ':wq' ../data/stations.csv
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Remove UTF-8 BOM</span>
+<span class="o">!</span>vim -c <span class="s1">&#39;:set nobomb&#39;</span> -c <span class="s1">&#39;:set fileencoding=utf-8&#39;</span> -c <span class="s1">&#39;:wq&#39;</span> ../data/temperature-readings.csv
+<span class="o">!</span>vim -c <span class="s1">&#39;:set nobomb&#39;</span> -c <span class="s1">&#39;:set fileencoding=utf-8&#39;</span> -c <span class="s1">&#39;:wq&#39;</span> ../data/precipitation-readings.csv
+<span class="o">!</span>vim -c <span class="s1">&#39;:set nobomb&#39;</span> -c <span class="s1">&#39;:set fileencoding=utf-8&#39;</span> -c <span class="s1">&#39;:wq&#39;</span> ../data/stations-Ostergotland.csv
+<span class="o">!</span>vim -c <span class="s1">&#39;:set nobomb&#39;</span> -c <span class="s1">&#39;:set fileencoding=utf-8&#39;</span> -c <span class="s1">&#39;:wq&#39;</span> ../data/stations.csv
 
-#!sed '1s/^\xEF\xBB\xBF//' < ../data/temperature-readings.csv > ../data/temperature-readings.csv
-#!sed '1s/^\xEF\xBB\xBF//' < ../data/precipitation-readings.csv > ../data/precipitation-readings.csv
-#!sed '1s/^\xEF\xBB\xBF//' < ../data/stations-Ostergotland.csv > ../data/stations-Ostergotland.csv
-#!sed '1s/^\xEF\xBB\xBF//' < ../data/stations.csv > ../data/stations.csv
+<span class="c1">#!sed &#39;1s/^\xEF\xBB\xBF//&#39; &lt; ../data/temperature-readings.csv &gt; ../data/temperature-readings.csv</span>
+<span class="c1">#!sed &#39;1s/^\xEF\xBB\xBF//&#39; &lt; ../data/precipitation-readings.csv &gt; ../data/precipitation-readings.csv</span>
+<span class="c1">#!sed &#39;1s/^\xEF\xBB\xBF//&#39; &lt; ../data/stations-Ostergotland.csv &gt; ../data/stations-Ostergotland.csv</span>
+<span class="c1">#!sed &#39;1s/^\xEF\xBB\xBF//&#39; &lt; ../data/stations.csv &gt; ../data/stations.csv</span>
 
-# Create big 16GiB file
-for i in range(8):
-    !cat ../data/temperature-readings.csv >> ../data/temperature-readings-big.csv
+<span class="c1"># Create big 16GiB file</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
+    <span class="o">!</span>cat ../data/temperature-readings.csv &gt;&gt; ../data/temperature-readings-big.csv
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
