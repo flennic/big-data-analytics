@@ -13156,11 +13156,6 @@ In a number of exercises you will be asked to calculated temperature averages (d
 <span class="o">!</span>vim -c <span class="s1">&#39;:set nobomb&#39;</span> -c <span class="s1">&#39;:set fileencoding=utf-8&#39;</span> -c <span class="s1">&#39;:wq&#39;</span> ../data/stations-Ostergotland.csv
 <span class="o">!</span>vim -c <span class="s1">&#39;:set nobomb&#39;</span> -c <span class="s1">&#39;:set fileencoding=utf-8&#39;</span> -c <span class="s1">&#39;:wq&#39;</span> ../data/stations.csv
 
-<span class="c1">#!sed &#39;1s/^\xEF\xBB\xBF//&#39; &lt; ../data/temperature-readings.csv &gt; ../data/temperature-readings.csv</span>
-<span class="c1">#!sed &#39;1s/^\xEF\xBB\xBF//&#39; &lt; ../data/precipitation-readings.csv &gt; ../data/precipitation-readings.csv</span>
-<span class="c1">#!sed &#39;1s/^\xEF\xBB\xBF//&#39; &lt; ../data/stations-Ostergotland.csv &gt; ../data/stations-Ostergotland.csv</span>
-<span class="c1">#!sed &#39;1s/^\xEF\xBB\xBF//&#39; &lt; ../data/stations.csv &gt; ../data/stations.csv</span>
-
 <span class="c1"># Create big 16GiB file</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
     <span class="o">!</span>cat ../data/temperature-readings.csv &gt;&gt; ../data/temperature-readings-big.csv
@@ -13183,7 +13178,7 @@ In a number of exercises you will be asked to calculated temperature averages (d
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">tr_path</span> <span class="o">=</span> <span class="s2">&quot;../data/temperature-readings.csv&quot;</span>
-<span class="n">tr_big_path</span> <span class="o">=</span> <span class="s2">&quot;../data/temperature-readings-big.csv&quot;</span>
+<span class="n">tr_big_path</span> <span class="o">=</span> <span class="s2">&quot;../data/temperature-readings.csv&quot;</span>
 <span class="n">pr_path</span> <span class="o">=</span> <span class="s2">&quot;../data/precipitation-readings.csv&quot;</span>
 <span class="n">sro_path</span> <span class="o">=</span> <span class="s2">&quot;../data/stations-Ostergotland.csv&quot;</span>
 <span class="n">sr_path</span> <span class="o">=</span> <span class="s2">&quot;../data/stations.csv&quot;</span>
@@ -13229,7 +13224,7 @@ In a number of exercises you will be asked to calculated temperature averages (d
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
@@ -13256,140 +13251,16 @@ In a number of exercises you will be asked to calculated temperature averages (d
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 84.5 ms, sys: 38 ms, total: 123 ms
-Wall time: 3min 11s
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[4]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>year</th>
-      <th>temp_max</th>
-      <th>temp_min</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2014</td>
-      <td>34.4</td>
-      <td>-42.5</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2013</td>
-      <td>31.6</td>
-      <td>-40.7</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2012</td>
-      <td>31.3</td>
-      <td>-42.7</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2011</td>
-      <td>32.5</td>
-      <td>-42.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2010</td>
-      <td>34.4</td>
-      <td>-41.7</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2009</td>
-      <td>31.5</td>
-      <td>-38.5</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>2008</td>
-      <td>32.2</td>
-      <td>-39.3</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>2007</td>
-      <td>32.2</td>
-      <td>-40.7</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>2006</td>
-      <td>32.7</td>
-      <td>-40.6</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>2005</td>
-      <td>32.1</td>
-      <td>-39.4</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -13404,7 +13275,7 @@ Wall time: 3min 11s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
@@ -13431,122 +13302,16 @@ Wall time: 3min 11s
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 96.5 ms, sys: 18.9 ms, total: 115 ms
-Wall time: 3min 58s
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[6]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>year</th>
-      <th>temp_max</th>
-      <th>station_max</th>
-      <th>temp_min</th>
-      <th>station_min</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2014</td>
-      <td>34.4</td>
-      <td>96560</td>
-      <td>-42.5</td>
-      <td>192840</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2013</td>
-      <td>31.6</td>
-      <td>98210</td>
-      <td>-40.7</td>
-      <td>179960</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2012</td>
-      <td>31.3</td>
-      <td>54990</td>
-      <td>-42.7</td>
-      <td>191910</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2011</td>
-      <td>32.5</td>
-      <td>172770</td>
-      <td>-42.0</td>
-      <td>179960</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2010</td>
-      <td>34.4</td>
-      <td>75250</td>
-      <td>-41.7</td>
-      <td>191910</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -13561,7 +13326,7 @@ Wall time: 3min 58s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">csv_read_lazy</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">):</span>
@@ -13578,7 +13343,7 @@ Wall time: 3min 58s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
@@ -13619,7 +13384,7 @@ Wall time: 3min 58s
     <span class="n">df</span><span class="p">[</span><span class="s2">&quot;station_max&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;station_max&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
     <span class="n">df</span><span class="p">[</span><span class="s2">&quot;station_min&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;station_min&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
     
-    <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;temp_max&#39;</span><span class="p">],</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">],</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 
 <span class="k">global</span> <span class="n">df</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">get_temperature_information</span><span class="p">()</span>
@@ -13629,162 +13394,16 @@ Wall time: 3min 58s
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 2min 3s, sys: 755 ms, total: 2min 4s
-Wall time: 2min 4s
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[9]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>year</th>
-      <th>temp_max</th>
-      <th>station_max</th>
-      <th>temp_min</th>
-      <th>station_min</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>25</th>
-      <td>1975</td>
-      <td>36.1</td>
-      <td>86200</td>
-      <td>-37.0</td>
-      <td>157860</td>
-    </tr>
-    <tr>
-      <th>42</th>
-      <td>1992</td>
-      <td>35.4</td>
-      <td>63600</td>
-      <td>-36.1</td>
-      <td>179960</td>
-    </tr>
-    <tr>
-      <th>44</th>
-      <td>1994</td>
-      <td>34.7</td>
-      <td>117160</td>
-      <td>-40.5</td>
-      <td>179960</td>
-    </tr>
-    <tr>
-      <th>64</th>
-      <td>2014</td>
-      <td>34.4</td>
-      <td>96560</td>
-      <td>-42.5</td>
-      <td>192840</td>
-    </tr>
-    <tr>
-      <th>60</th>
-      <td>2010</td>
-      <td>34.4</td>
-      <td>75250</td>
-      <td>-41.7</td>
-      <td>191910</td>
-    </tr>
-    <tr>
-      <th>39</th>
-      <td>1989</td>
-      <td>33.9</td>
-      <td>63050</td>
-      <td>-38.2</td>
-      <td>166870</td>
-    </tr>
-    <tr>
-      <th>32</th>
-      <td>1982</td>
-      <td>33.8</td>
-      <td>94050</td>
-      <td>-42.2</td>
-      <td>113410</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>1968</td>
-      <td>33.7</td>
-      <td>137100</td>
-      <td>-42.0</td>
-      <td>179950</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>1966</td>
-      <td>33.5</td>
-      <td>151640</td>
-      <td>-49.4</td>
-      <td>179950</td>
-    </tr>
-    <tr>
-      <th>33</th>
-      <td>1983</td>
-      <td>33.3</td>
-      <td>98210</td>
-      <td>-38.2</td>
-      <td>191900</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -13807,7 +13426,7 @@ Wall time: 2min 4s
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Task 2:</strong> Count the number of readings for each month in the period of 1950-2014 which are higher than 10 degrees. Repeat the exercise, this time taking only distinct readings from each station. That is, if a station reported a reading above 10 degrees in some month, then it appears only once in the count for that month. In this exercise you will use the <code>temperature-readings.csv</code> file.</p>
+<p>Count the number of readings for each month in the period of 1950-2014 which are higher than 10 degrees. Repeat the exercise, this time taking only distinct readings from each station. That is, if a station reported a reading above 10 degrees in some month, then it appears only once in the count for that month. In this exercise you will use the <code>temperature-readings.csv</code> file.</p>
 <p>The output should contain the following information:</p>
 <p>Year, month, count</p>
 
@@ -13816,7 +13435,7 @@ Wall time: 2min 4s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
@@ -13837,140 +13456,16 @@ Wall time: 2min 4s
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 71.4 ms, sys: 20.1 ms, total: 91.6 ms
-Wall time: 1min 32s
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[11]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>year</th>
-      <th>month</th>
-      <th>count</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2014</td>
-      <td>12</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2014</td>
-      <td>11</td>
-      <td>8139</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2014</td>
-      <td>10</td>
-      <td>42191</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2014</td>
-      <td>09</td>
-      <td>86090</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2014</td>
-      <td>08</td>
-      <td>124045</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2014</td>
-      <td>07</td>
-      <td>147681</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>2014</td>
-      <td>06</td>
-      <td>101711</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>2014</td>
-      <td>05</td>
-      <td>57250</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>2014</td>
-      <td>04</td>
-      <td>19862</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>2014</td>
-      <td>03</td>
-      <td>4213</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -13985,7 +13480,7 @@ Wall time: 1min 32s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
@@ -14008,140 +13503,16 @@ Wall time: 1min 32s
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 85.6 ms, sys: 16.1 ms, total: 102 ms
-Wall time: 1min 32s
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[13]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>year</th>
-      <th>month</th>
-      <th>count</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2014</td>
-      <td>12</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2014</td>
-      <td>11</td>
-      <td>158</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2014</td>
-      <td>10</td>
-      <td>270</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2014</td>
-      <td>09</td>
-      <td>296</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2014</td>
-      <td>08</td>
-      <td>296</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2014</td>
-      <td>07</td>
-      <td>297</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>2014</td>
-      <td>06</td>
-      <td>298</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>2014</td>
-      <td>05</td>
-      <td>296</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>2014</td>
-      <td>04</td>
-      <td>254</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>2014</td>
-      <td>03</td>
-      <td>169</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -14165,7 +13536,7 @@ Wall time: 1min 32s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
@@ -14186,151 +13557,16 @@ Wall time: 1min 32s
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 271 ms, sys: 40 ms, total: 311 ms
-Wall time: 1min 42s
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[15]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>station</th>
-      <th>year</th>
-      <th>month</th>
-      <th>average-temperature</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>192840</td>
-      <td>2014</td>
-      <td>12</td>
-      <td>-11.48</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>191910</td>
-      <td>2014</td>
-      <td>12</td>
-      <td>-10.86</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>191720</td>
-      <td>2014</td>
-      <td>12</td>
-      <td>-11.33</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>189720</td>
-      <td>2014</td>
-      <td>12</td>
-      <td>-9.84</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>188850</td>
-      <td>2014</td>
-      <td>12</td>
-      <td>-7.64</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>188820</td>
-      <td>2014</td>
-      <td>12</td>
-      <td>-7.58</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>188800</td>
-      <td>2014</td>
-      <td>12</td>
-      <td>-6.94</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>183750</td>
-      <td>2014</td>
-      <td>12</td>
-      <td>-8.90</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>182930</td>
-      <td>2014</td>
-      <td>12</td>
-      <td>-9.77</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>182910</td>
-      <td>2014</td>
-      <td>12</td>
-      <td>-9.38</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -14354,7 +13590,7 @@ Wall time: 1min 42s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
@@ -14381,80 +13617,16 @@ Wall time: 1min 42s
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 64.8 ms, sys: 16 ms, total: 80.8 ms
-Wall time: 1min 30s
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[17]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>station</th>
-      <th>max_temperature</th>
-      <th>max_precipitation</th>
-    </tr>
-  </thead>
-  <tbody>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -14479,7 +13651,7 @@ Wall time: 1min 30s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
@@ -14516,140 +13688,16 @@ Wall time: 1min 30s
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 79.3 ms, sys: 709 µs, total: 80 ms
-Wall time: 33.1 s
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[19]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>year</th>
-      <th>month</th>
-      <th>average_precipitation</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2016</td>
-      <td>07</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2016</td>
-      <td>06</td>
-      <td>1.588750</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2016</td>
-      <td>05</td>
-      <td>0.943548</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2016</td>
-      <td>04</td>
-      <td>0.896667</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2016</td>
-      <td>03</td>
-      <td>0.643952</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2016</td>
-      <td>02</td>
-      <td>0.743534</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>2016</td>
-      <td>01</td>
-      <td>0.723077</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>2015</td>
-      <td>12</td>
-      <td>0.936842</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>2015</td>
-      <td>11</td>
-      <td>2.129583</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>2015</td>
-      <td>10</td>
-      <td>0.072984</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -14675,14 +13723,309 @@ Wall time: 33.1 s
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> It seems like this exercise has been removed from last year to this year, as the instructions have chnaged from 1. april to 2. april 2019.</p>
+<p><strong>Answer:</strong> Is wrong, maybe the average has to be calculated differently. Also plot has to be created.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#%%time</span>
+
+<span class="n">res_t</span> <span class="o">=</span> <span class="n">temperature_readings</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">l</span><span class="p">:</span> <span class="n">l</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">))</span>
+<span class="n">res_s</span> <span class="o">=</span> <span class="n">station_oster_readings</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">l</span><span class="p">:</span> <span class="n">l</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">))</span>
+
+<span class="n">res_s</span> <span class="o">=</span> <span class="n">res_s</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="n">res_s</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">broadcast</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">res_s</span><span class="p">)</span>
+
+<span class="n">res_t</span> <span class="o">=</span> <span class="n">res_t</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nb">float</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">3</span><span class="p">])))</span>
+
+<span class="n">res_oster</span> <span class="o">=</span> <span class="n">res_t</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span> <span class="o">&gt;=</span> <span class="mi">1950</span> <span class="ow">and</span> <span class="nb">int</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="mi">2014</span><span class="p">)</span>
+<span class="n">res_oster</span> <span class="o">=</span> <span class="n">res_oster</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="n">res_s</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+<span class="n">res_oster</span> <span class="o">=</span> <span class="n">res_oster</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mi">1</span><span class="p">)))</span>
+<span class="n">res_oster</span> <span class="o">=</span> <span class="n">res_oster</span><span class="o">.</span><span class="n">reduceByKey</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">res_oster</span> <span class="o">=</span> <span class="n">res_oster</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)[</span><span class="mi">2</span><span class="p">],</span> <span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span><span class="mi">1</span><span class="p">)))</span>
+<span class="n">res_oster</span> <span class="o">=</span> <span class="n">res_oster</span><span class="o">.</span><span class="n">reduceByKey</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">res_oster</span> <span class="o">=</span> <span class="n">res_oster</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]),</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])))</span>
+<span class="c1">#(month, (year, avg))</span>
+
+<span class="n">res_general</span> <span class="o">=</span> <span class="n">res_t</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span> <span class="o">&gt;=</span> <span class="mi">1950</span> <span class="ow">and</span> <span class="nb">int</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="mi">1980</span><span class="p">)</span>
+<span class="n">res_general</span> <span class="o">=</span> <span class="n">res_general</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mi">1</span><span class="p">)))</span>
+<span class="n">res_general</span> <span class="o">=</span> <span class="n">res_general</span><span class="o">.</span><span class="n">reduceByKey</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">res_general</span> <span class="o">=</span> <span class="n">res_general</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)[</span><span class="mi">2</span><span class="p">],</span> <span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">)))</span>
+<span class="n">res_general</span> <span class="o">=</span> <span class="n">res_general</span><span class="o">.</span><span class="n">reduceByKey</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">res_general</span> <span class="o">=</span> <span class="n">res_general</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]))</span>
+<span class="c1">#(month, avg)</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">res_general</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">res_oster</span><span class="p">)</span>
+<span class="c1">#(1, (-5.896814611496512, (2012, -1.5940352235658504)))</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">sortBy</span><span class="p">(</span><span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">global</span> <span class="n">df</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">collect</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;month&#39;</span><span class="p">,</span> <span class="s1">&#39;temperature-difference&#39;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[70]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>temperature-difference</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1950</td>
+      <td>1</td>
+      <td>0.851855</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1950</td>
+      <td>2</td>
+      <td>4.442803</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1950</td>
+      <td>3</td>
+      <td>3.766574</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1950</td>
+      <td>4</td>
+      <td>3.045859</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1950</td>
+      <td>5</td>
+      <td>2.497390</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1950</td>
+      <td>6</td>
+      <td>1.049122</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1950</td>
+      <td>7</td>
+      <td>-0.369539</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1950</td>
+      <td>8</td>
+      <td>1.754706</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1950</td>
+      <td>9</td>
+      <td>1.779558</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1950</td>
+      <td>10</td>
+      <td>1.557379</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[71]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>temperature-difference</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>770</th>
+      <td>2014</td>
+      <td>3</td>
+      <td>5.793303</td>
+    </tr>
+    <tr>
+      <th>771</th>
+      <td>2014</td>
+      <td>4</td>
+      <td>3.830523</td>
+    </tr>
+    <tr>
+      <th>772</th>
+      <td>2014</td>
+      <td>5</td>
+      <td>1.750518</td>
+    </tr>
+    <tr>
+      <th>773</th>
+      <td>2014</td>
+      <td>6</td>
+      <td>-0.587972</td>
+    </tr>
+    <tr>
+      <th>774</th>
+      <td>2014</td>
+      <td>7</td>
+      <td>3.356081</td>
+    </tr>
+    <tr>
+      <th>775</th>
+      <td>2014</td>
+      <td>8</td>
+      <td>0.628932</td>
+    </tr>
+    <tr>
+      <th>776</th>
+      <td>2014</td>
+      <td>9</td>
+      <td>1.647216</td>
+    </tr>
+    <tr>
+      <th>777</th>
+      <td>2014</td>
+      <td>10</td>
+      <td>3.502018</td>
+    </tr>
+    <tr>
+      <th>778</th>
+      <td>2014</td>
+      <td>11</td>
+      <td>4.707888</td>
+    </tr>
+    <tr>
+      <th>779</th>
+      <td>2014</td>
+      <td>12</td>
+      <td>3.784004</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sc</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
