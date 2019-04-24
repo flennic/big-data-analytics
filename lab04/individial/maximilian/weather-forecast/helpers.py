@@ -1,5 +1,6 @@
 from math import radians, cos, sin, asin, sqrt, exp
 
+
 def haversine(lon1, lat1, lon2, lat2):
     # convert decimal degrees to radians
     lon1, lat1, lon2, lat2 = map(radians, [lon1, lat1, lon2, lat2]) # haversine formula
