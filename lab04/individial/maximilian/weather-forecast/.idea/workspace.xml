@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="31dec68a-b4c0-4f65-82a5-1c3d1c443b67" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../../../lab02/732A54-BDA1-maxpf364-julki092.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../lab02/732A54-BDA1-maxpf364-julki092.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/weather-forecast.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/weather-forecast.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weater-forecast.py" beforeDir="false" afterPath="$PROJECT_DIR$/weater-forecast.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/weater-forecast.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="29" column="55" lean-forward="true" selection-start-line="29" selection-start-column="55" selection-end-line="29" selection-end-column="55" />
+            <state relative-caret-position="333">
+              <caret line="195" column="26" lean-forward="true" selection-start-line="195" selection-start-column="26" selection-end-line="195" selection-end-column="26" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -36,7 +32,7 @@
         <entry file="file://$PROJECT_DIR$/helpers.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="e#0#46#0" expanded="true" />
               </folding>
@@ -232,12 +228,12 @@
       <workItem from="1556002453064" duration="323000" />
       <workItem from="1556088889748" duration="15119000" />
       <workItem from="1556205196088" duration="3877000" />
-      <workItem from="1556210087501" duration="8227000" />
+      <workItem from="1556210087501" duration="9313000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32485000" />
+    <option name="totallyTimeSpent" value="33571000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -322,7 +318,7 @@
     <entry file="file://$PROJECT_DIR$/helpers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="e#0#46#0" expanded="true" />
           </folding>
@@ -331,8 +327,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/weater-forecast.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="29" column="55" lean-forward="true" selection-start-line="29" selection-start-column="55" selection-end-line="29" selection-end-column="55" />
+        <state relative-caret-position="333">
+          <caret line="195" column="26" lean-forward="true" selection-start-line="195" selection-start-column="26" selection-end-line="195" selection-end-column="26" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>

@@ -206,7 +206,7 @@ def predict_weather(latitude,
 
 predicted_temperatures = predict_weather(latitude, longitude, date, temperatures, stations,
                                          h_distance, h_date, h_date, gaussian_kernel, True)
-res = predicted_temperatures  # .take(10)
+res = predicted_temperatures
 
 print(res)
 
