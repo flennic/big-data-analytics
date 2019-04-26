@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="31dec68a-b4c0-4f65-82a5-1c3d1c443b67" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../../../lab02/732A54-BDA1-maxpf364-julki092.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../lab02/732A54-BDA1-maxpf364-julki092.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weater-forecast.py" beforeDir="false" afterPath="$PROJECT_DIR$/weater-forecast.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +18,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/weater-forecast.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
+            <state relative-caret-position="738">
               <caret line="195" column="26" lean-forward="true" selection-start-line="195" selection-start-column="26" selection-end-line="195" selection-end-column="26" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
@@ -228,12 +227,12 @@
       <workItem from="1556002453064" duration="323000" />
       <workItem from="1556088889748" duration="15119000" />
       <workItem from="1556205196088" duration="3877000" />
-      <workItem from="1556210087501" duration="9313000" />
+      <workItem from="1556210087501" duration="9890000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33571000" />
+    <option name="totallyTimeSpent" value="34148000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -253,7 +252,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6268657" visible="true" weight="0.32795697" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6268657" weight="0.32795697" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -327,7 +326,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/weater-forecast.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
+        <state relative-caret-position="738">
           <caret line="195" column="26" lean-forward="true" selection-start-line="195" selection-start-column="26" selection-end-line="195" selection-end-column="26" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
